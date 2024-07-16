@@ -19,7 +19,9 @@ describe("OrangeHRM Login and create employee", () => {
 
         // Add a new employee record
         adminPage.clickAdd();
-        adminPage.fillEmployeeDetails("Nick","Cave", "N-Cave", "Password123!")
+        adminPage.fillEmployeeDetails("Ranga  Akunuri","NCave", "Password123");
+        adminPage.selectUserRole('Admin'); // Select Admin from dropdown
+        adminPage.selectUserStatus('Enabled');
         adminPage.save();
     });
 })
