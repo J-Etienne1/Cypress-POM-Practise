@@ -2,12 +2,12 @@ import LoginPage from '../../page-objects/LoginPage';
 import DashboardPage from '../../page-objects/DashboardPage';
 import AdminPage from '../../page-objects/AdminPage';
 
-describe("OrangeHRM Login and create employee", () => {
+describe("OrangeHRM Login and edit employee", () => {
     const loginPage = new LoginPage();
     const dashboardPage = new DashboardPage();
     const adminPage = new AdminPage();
 
-    it('should login and create a new employee record', () => {
+    it('should login and edit an employee record', () => {
         // Visit the login page and login
         loginPage.visit();
         loginPage.loginForm.fillUsername("Admin");
