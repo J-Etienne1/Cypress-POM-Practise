@@ -1,6 +1,6 @@
-import LoginPage from "../../page-objects/LoginPage";
-import DashboardPage from "../../page-objects/DashboardPage";
-import AdminPage from "../../page-objects/AdminPage";
+import LoginPage from '../../page-objects/LoginPage';
+import DashboardPage from '../../page-objects/DashboardPage';
+import AdminPage from '../../page-objects/AdminPage';
 
 describe("OrangeHRM Login and create employee", () => {
     const loginPage = new LoginPage();
@@ -8,18 +8,18 @@ describe("OrangeHRM Login and create employee", () => {
     const adminPage = new AdminPage();
 
     it('should login and create a new employee record', () => {
-        // Visit the login page amd login
+        // Visit the login page and login
         loginPage.visit();
-        loginPage.fillUsername("Admin");
-        loginPage.fillPassword("admin123");
-        loginPage.submit();
+        loginPage.loginForm.fillUsername("Admin");
+        loginPage.loginForm.fillPassword("admin123");
+        loginPage.loginForm.submit();
 
         // Navigate to the Admin section
-        dashboardPage.navigateToAdmin();
+        dashboardPage.dashboardSection.navigateToAdmin();
 
         // Edit an employee record
-        adminPage.editEmployee();
-        adminPage.fillEmployeeDetails("NCave");
-        adminPage.save();
+        adminPage.adminSection.editEmployee();
+        adminPage.adminSection.fillEmployeeDetails("NCave");
+        adminPage.adminSection.save();
     });
-})
+});
